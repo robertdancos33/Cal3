@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ro">
 
 <head>
     <meta charset="UTF-8">
@@ -27,31 +27,34 @@
             <th>
                 <a href="https://ro.wikipedia.org/wiki/Moara_cu_noroc">https://ro.wikipedia.org/wiki/Moara_cu_noroc</a>
             </th>
-            <th><img src="poze\download.jpg" alt="" style="float:right;width:400;height:400;"></th>
+            <th><img src="poze/download.jpg" alt="" style="float:right;width:400px;height:400px;"></th>
             <th>
                 <p>Moara cu noroc este o nuvelă scrisă de Ioan Slavici, tratând consecințele pe care dorința de îmbogățire le are asupra destinului uman. Nuvela este publicată în anul 1881, în volumul Novele din popor, alături de alte nuvele ale scriitorului,
                     precum: Popa Tanda, Gura satului, O viață pierdută, La crucea din sat, Scormon și Budulea Taichii. Majoritatea criticilor o consideră una dintre creațiile cele mai importante ale autorului, alături de Pădureanca și romanul Mara.</p>
             </th>
         </tr>
     </table>
-    <br>
-    <br>
-    <br>
-    <button id="butonOrar" class="buttonOrar" onclick="redirect()">Orar</button>
-    <button id="butonAfisareMaterii" class="buttonAfisareMaterii" onclick="redirect()">Afisare Materii</button>
+
+    <button id="butonOrar" class="buttonOrar">Orar</button>
+    <button id="butonAfisareMaterii" class="buttonAfisareMaterii">Afisare Materii</button>
+    <button id="butonAsyncron" class="buttonasyncron">Asynchronous</button>
+    <button id="butonLogin" class="buttonlogin">Login</button>
 
     <script>
-        var buton = document.getElementById('butonOrar');
-        buton.onclick = function() {
+        document.getElementById('butonOrar').onclick = function() {
             window.location.href = 'orar.html';
-        }
+        };
 
-
-
-        var buton = document.getElementById('butonAfisareMaterii');
-        buton.onclick = function() {
+        document.getElementById('butonAfisareMaterii').onclick = function() {
             window.location.href = 'AfisareMaterii.html';
-        }
+        };
+
+        document.getElementById('butonAsyncron').onclick = function() {
+            window.location.href = 'asyncron.html';
+        };
+        document.getElementById('butonLogin').onclick = function() {
+            window.location.href = 'views/index.html';
+        };
     </script>
 </body>
 

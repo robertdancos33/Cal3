@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Orar</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <h2>Orar</h2>
     <table id="orarTable">
@@ -21,8 +23,7 @@
     </table>
 
     <script>
-        const orar = [
-            {
+        const orar = [{
                 zi: 'Luni',
                 ore: {
                     '8:00-10:00': '             ',
@@ -32,8 +33,7 @@
                     '16:00-18:00': 'Programare - WEB - L',
                     '18:00-20:00': '        '
                 }
-            },
-            {
+            }, {
                 zi: 'Marti',
                 ore: {
                     '8:00-10:00': 'Programare WEB - C',
@@ -43,8 +43,7 @@
                     '16:00-18:00': 'Sisteme de prelucrare grafica - L',
                     '18:00-20:00': 'Prelucrarea imaginilor - L'
                 }
-            },
-            {
+            }, {
                 zi: 'Miercuri',
                 ore: {
                     '8:00-10:00': 'Prelucrarea imaginilor - C',
@@ -54,8 +53,7 @@
                     '16:00-18:00': 'Proiectare cu microprocesoare arhitectura sistemelor de calcul',
                     '18:00-20:00': '        '
                 }
-            },
-            {
+            }, {
                 zi: 'Joi',
                 ore: {
                     '8:00-10:00': 'Sisteme inteligente - L',
@@ -66,8 +64,7 @@
                     '16:00-18:00': '',
                     '18:00-20:00': '        '
                 }
-            },
-            {
+            }, {
                 zi: 'Vineri',
                 ore: {
                     '8:00-10:00': '             ',
@@ -87,7 +84,7 @@
                 const ziCell = document.createElement('td');
                 ziCell.textContent = zi.zi;
                 row.appendChild(ziCell);
-                
+
                 Object.entries(zi.ore).forEach(([ora, materie]) => {
                     const oraCell = document.createElement('td');
                     oraCell.textContent = `${materie}`; // Afișează ora și materia în celulă
@@ -101,4 +98,5 @@
         afiseazaOrar(orar);
     </script>
 </body>
+
 </html>

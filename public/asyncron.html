@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asynchronous</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        
+        #editor,
+        #console {
+            width: 45%;
+            height: 300px;
+            border: 1px solid #000;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+        
+        #editor {
+            white-space: pre;
+        }
+        
+        #console {
+            white-space: pre-wrap;
+            background-color: #f0f0f0;
+        }
+        
+        #text-section {
+            width: 100%;
+            height: 100px;
+            border: 2px solid #000;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+        }
+        
+        button {
+            display: block;
+            margin: 20px auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <div id="editor" contenteditable="true">
+            poly = [320,290, 100,360, 120,240, 320,290]; my.log("poly: " + poly);
+        </div>
+        <button onclick="runCode()">RUN</button>
+    </div>
+    <div id="console">
+        my console
+    </div>
+    <div id="text-section">
+        Aceasta este o secțiune de text.
+    </div>
+
+    <script>
+        function runCode() {
+            const editorContent = document.getElementById('editor').innerText;
+            const consoleDiv = document.getElementById('console');
+
+            // Clear previous console output
+            consoleDiv.innerText = 'my console\n';
+
+            // Custom console log function
+            const my = {
+                log: function(message) {
+                    consoleDiv.innerText += message + '\n';
+                }
+            };
+
+            try {
+                // Evaluate the code
+                eval(editorContent);
+            } catch (error) {
+                my.log('Error: ' + error.message);
+            }
+        }
+
+        // Change background color every 5 seconds using setInterval
+        setInterval(() => {
+            const section = document.getElementById('text-section');
+            const currentColor = section.style.backgroundColor;
+            section.style.backgroundColor = currentColor === 'rgb(255, 204, 203)' ? '#ccffcc' : '#ffcccb';
+        }, 5000);
+    </script>
+</body>
+
+</html>
